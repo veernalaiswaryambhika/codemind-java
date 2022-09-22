@@ -1,22 +1,23 @@
-import java.util.*;
-class sol
+import java.util.Scanner;
+class main
 {
-    public static void main(String args[])
-    {
-        Scanner s=new Scanner(System.in);
-        int n=s.nextInt();
-        int a[]=new int[n];
-        for(int  i=0;i<n;i++)
-        a[i]=s.nextInt();
-        int i,t=0;
-         int k=s.nextInt();
-       
-           for(i=0;i<n;i++)
-           {
-           if(a[i]==k)
-           t++;
-           
-       }
-        System.out.print(t);
-    }
+	public static void main(String args[])
+	{
+	Scanner sc=new Scanner(System.in);
+	int n,x[],i,k,c=0;
+	n=sc.nextInt();
+	x=new int[n];
+	for(i=0;i<n;i++)
+	
+	x[i]=sc.nextInt();
+	k=sc.nextInt();
+	
+	for (i=0;i<n;i++)
+	{
+		if(x[i]==k)
+		c++;
+	}
+	System.out.print(c);
+	}
 }
+
