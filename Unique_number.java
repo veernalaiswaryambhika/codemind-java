@@ -1,5 +1,5 @@
 import java.util.*;
-class Sample
+class sol
 {
     public static void main(String args[])
     {
@@ -8,23 +8,22 @@ class Sample
         int a[]=new int[10];
         while(n!=0)
         {
-            int t=n%10;
-               a[t]++;
-                n=n/10;
-       
-          }int flag=0;
-          for(int i=0;i<10;i++)
-          {
-              if(a[i]>=2)
-              {
-              flag=1;
-              break;
-              }
-          }
-          if(flag==0)
-          System.out.print("Unique Number");
-          else
-          System.out.print("Not Unique Number");
-        
+            int r=n%10;
+            a[r]++;
+            n=n/10;
+        }
+        int f=0;
+        for(int i=0;i<10;i++)
+        {
+            if(a[i]>1)
+            {
+                f=1;
+                break;
+            }
+        }
+        if(f==0)
+            System.out.print("Unique Number");
+        else
+            System.out.print("Not Unique Number");
     }
 }
