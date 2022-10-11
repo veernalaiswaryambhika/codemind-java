@@ -1,22 +1,23 @@
-import java.util.Scanner;
-class Main
+import java.util.*;
+class Sample
 {
     public static void main(String args[])
     {
-        int n,digit,large=0;
-        Scanner Sc=new Scanner(System.in);
-        n=Sc.nextInt();
-        while(n>0)
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int max=0;
+        int rem=0;
+       
+        while(n!=0)
         {
-            digit=n%10;
-            {
-              if(large<digit)
-              {
-                  large=digit;
-              }
-            }
-            n=n/10;
+        rem=n%10;
+        if(rem>max)
+        {
+        max=rem;
         }
-        System.out.println(large);
+        n=n/10;
+        
+        }
+        System.out.print(max);
     }
 }
