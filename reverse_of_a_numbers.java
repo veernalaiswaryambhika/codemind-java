@@ -5,14 +5,14 @@ class sample
     {
         Scanner s=new Scanner(System.in);
         int n=s.nextInt();
-        int temp=n;
-        int r=0;
+        int rem=0;
+        int rev=0;
         while(n!=0)
         {
-            r=r*10+(n%10);
+            rem=n%10;
+            rev=rev*10+rem;
             n=n/10;
         }
-       
-        System.out.print(r);
+        System.out.print(rev);
     }
 }
