@@ -1,51 +1,41 @@
 import java.util.*;
 class sample
-{  
-    public static boolean isprime(int m)
-  {
-    for(int i=2;i<=(int)Math.sqrt(m);i++)
+{   
+    public static boolean isprime(int n)
     {
-        if(m%i==0)
-        return false;
-       
-    }
- 
+        for(int i=2;i<=(int)Math.sqrt(n);i++)
+        {
+            if(n%i==0)
+            return false;
+        }
         return true;
-}
+    }
     public static void main(String args[])
     {
-        Scanner s=new Scanner(System.in);
-        int n=s.nextInt();
-     
-        int f=0;
-        
-        if(isprime(n))
-        {
-           while(n!=0)
+       Scanner s=new Scanner(System.in);
+       int m=s.nextInt();
+       
+       if(isprime(m))
+       {   int f=0;
+           while(m!=0)
            {
-               int r=n%10;
+               int r=m%10;
                if(r==1)
-               {
-                   f=1;
-                   break;
-               }
+               f=1;
                if(isprime(r))
-               n=n/10;
+               m=m/10;
                else
                {
-                   f=1;
-                   break;
+              f=1;
+              break;
                }
            }
-           if(f==0)
-            System.out.print("Mega Prime");
-             else
-        System.out.print("Not Mega Prime"); 
-        }
+           if(f==1)
+            System.out.println("Not Mega Prime");
+            else
+             System.out.println("Mega Prime");
+       }
         else
-        System.out.print("Not Mega Prime");
-            
-            
-        
+               System.out.println("Not Mega Prime");
     }
 }
