@@ -1,28 +1,34 @@
 import java.util.*;
-class Solution
+class Sammple
 {
     public static void main(String args[])
     {
         Scanner s=new Scanner(System.in);
         int n=s.nextInt();
         int a[]=new int[n];
+        
+      int k=0;
         for(int i=0;i<n;i++)
+        {
         a[i]=s.nextInt();
-        int sum=0;
-        for(int i=0;i<n;i++)
-        {
-            sum=sum+a[i];
+        k+=a[i];
         }
-        int c=0;
-        int avg=sum/n;
+        int avg=(int)k/n;
+        
+        int f=0;
          for(int i=0;i<n;i++)
-        {
-            if(a[i]==avg)
-           c++;
-        }
-        if(c>0)
-         System.out.println("True");
-         else
-          System.out.println("False");
+         {
+             if(a[i]==avg)
+             {
+             f=1;
+             break;
+             }
+         }
+      if(f==1)
+        System.out.print("True");
+        
+        else
+         System.out.print("False");
+        
     }
 }
