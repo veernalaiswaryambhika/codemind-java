@@ -1,48 +1,42 @@
-import java.util.Scanner;
-class palinprime
+import java.util.*;
+class sol
 {
-    public static boolean ispalindrome(int n)
+    public static boolean isprime(int n)
     {
-        int d=(int)Math.log10(n);
-        int found=0;
-        while(n>0)
+        for(int i=2;i<=(int)Math.sqrt(n);i++)
         {
-            if(n/(int)Math.pow(10,d)!=n%10)
+            if(n%i==0)
+                return false;
+        }
+        return true;
+    }
+    public static boolean ispalin(int n)
+    {
+        int f=0;
+        int d=(int)Math.log10(n);
+        
+        while(n!=0)
+        {
+            if(n/(int)(Math.pow(10,d))!=n%10)
             {
-                found=1;
+                f=1;
                 break;
             }
             n=n%(int)Math.pow(10,d);
             n=n/10;
             d=d-2;
         }
-        if(found==1)
-          return false;
-        else
+        if(f==0)
             return true;
-    }
-    public static boolean isprime(int b)
-    {
-        for(int i=2;i<=(int)Math.sqrt(b);i++)
-        {
-            if(b%i==0)
-            {
-                return false;
-            }
-        }
-        return true;
+        return false;
     }
     public static void main(String args[])
     {
         Scanner s=new Scanner(System.in);
-        int m=s.nextInt();
-        if(m%2==0)
-        m=m+1;
-        else
-        m=m+2;
-        for(int i=m;;i=i+2)
+        int n=s.nextInt();
+        for(int i=n+1;;i++)
         {
-            if(isprime(i)&&ispalindrome(i))
+            if(isprime(i) && ispalin(i))
             {
                 System.out.println(i);
                 break;
