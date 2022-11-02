@@ -6,19 +6,22 @@ class sol
         Scanner s=new Scanner(System.in);
         int n=s.nextInt();
         int a[]=new int[n];
-        for(int  i=0;i<n;i++)
-        a[i]=s.nextInt();
-        int i,c=0;
-       
-           for(i=0;i<n;i++)
-           {
-           if(a[i]%2==0)
-           c++;
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            a[i]=s.nextInt();
            
-       }
-       if(c>=n)
-        System.out.println("True");
-        else
-        System.out.println("False");
+        }
+        int f=0;
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]%2!=0)
+             f=1;
+        }
+        if(f==1)
+         System.out.print("False");
+         else
+         System.out.print("True");
+        
     }
 }
